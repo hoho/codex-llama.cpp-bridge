@@ -1,0 +1,12 @@
+model = "Qwen/Qwen3.8-27B"
+model_provider = "llama_cpp_bridge"
+web_search = "live"
+
+[model_providers.llama_cpp_bridge]
+name = "llama.cpp through codex-llama.cpp-bridge"
+base_url = "http://127.0.0.1:10901/v1"
+wire_api = "responses"
+requires_openai_auth = false
+
+[mcp_servers.search]
+url = "http://127.0.0.1:5657/mcp"

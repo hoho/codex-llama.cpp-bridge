@@ -1,0 +1,75 @@
+{
+  "name": "codex-llama.cpp-bridge",
+  "version": "0.0.1",
+  "description": "Run OpenAI Codex against llama.cpp's native Responses API.",
+  "keywords": [
+    "codex",
+    "llama.cpp",
+    "responses-api",
+    "qwen",
+    "ai"
+  ],
+  "author": "Marat Abdullin <ma@xrlt.net>",
+  "type": "module",
+  "main": "./dist/bridge.mjs",
+  "types": "./dist/bridge.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/bridge.d.mts",
+      "import": "./dist/bridge.mjs"
+    },
+    "./server": {
+      "types": "./dist/server.d.mts",
+      "import": "./dist/server.mjs"
+    }
+  },
+  "bin": {
+    "codex-llama.cpp-bridge": "./dist/cli.mjs",
+    "codex-llama-cpp-bridge": "./dist/cli.mjs",
+    "clb": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "MANUAL_TEST_PROMPTS.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "vitest run --coverage",
+    "test:e2e": "pnpm build && vitest run --config vitest.e2e.config.ts",
+    "ci": "pnpm format:check && pnpm lint && pnpm check && pnpm test && pnpm test:e2e",
+    "prepack": "pnpm build",
+    "prepublishOnly": "pnpm run ci",
+    "publish:npm": "pnpm publish --access public"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=12.4.0 <13"
+  },
+  "packageManager": "pnpm@12.4.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@openai/codex": "0.153.4",
+    "@types/node": "^26.5.0",
+    "@vitest/coverage-v8": "^5.0.0",
+    "eslint": "^10.10.0",
+    "jiti": "^2.7.0",
+    "prettier": "^3.9.6",
+    "tsdown": "^0.23.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.0",
+    "unrun": "^0.3.1",
+    "vitest": "^5.0.0"
+  },
+  "license": "MIT"
+}

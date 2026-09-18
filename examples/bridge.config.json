@@ -1,0 +1,12 @@
+{
+  "listen": {
+    "host": "127.0.0.1",
+    "port": 10901
+  },
+  "maxRequestBodyBytes": 16777216,
+  "upstream": "http://127.0.0.1:5656/v1",
+  "webSearchTool": {
+    "namespace": "mcp__search",
+    "tool": "search"
+  }
+}
