@@ -273,8 +273,9 @@ async function fixture(
           '--ignore-rules',
           '--strict-config',
           '--skip-git-repo-check',
+          // This fixture supplies every model response locally; platform sandbox behavior is outside the bridge contract.
           '--sandbox',
-          'workspace-write',
+          'danger-full-access',
           '--json',
           '-C',
           workspace,
