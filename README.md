@@ -304,6 +304,6 @@ namespace tools and resolves configured web-search mappings while preserving nat
 
 ## License
 
-ScriptFS is available under the [MIT License](LICENSE).
+[MIT License](LICENSE).
 
 Copyright (c) 2026 Marat Abdullin.
